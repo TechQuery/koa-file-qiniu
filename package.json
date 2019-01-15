@@ -1,0 +1,72 @@
+{
+  "name": "koa-file-qiniu",
+  "version": "0.1.0",
+  "description": "Koa middleware to proxy accessing of QiNiu cloud storage",
+  "keywords": [
+    "koa",
+    "middleware",
+    "proxy",
+    "qiniu",
+    "cloud",
+    "file",
+    "storage"
+  ],
+  "author": "shiy2008@gmail.com",
+  "license": "LGPL-3.0",
+  "homepage": "https://github.com/TechQuery/koa-file-qiniu#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechQuery/koa-file-qiniu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TechQuery/koa-file-qiniu/issues"
+  },
+  "main": "source/index.js",
+  "scripts": {
+    "lint": "eslint source/ --fix",
+    "build": "babel source/ -d dist/",
+    "test": "npm run lint  &&  npm run build",
+    "prepublishOnly": "npm test"
+  },
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "peerDependencies": {
+    "koa": "^2.6.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@babel/runtime": "^7.2.0",
+    "qiniu": "^7.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-decorators": "^7.2.3",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "7.6.0"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "decoratorsBeforeExport": true
+        }
+      ],
+      "@babel/plugin-transform-runtime"
+    ]
+  }
+}
